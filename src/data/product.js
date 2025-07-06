@@ -1,0 +1,31 @@
+export const allProducts = [
+  { id: 1, name: 'Tall Drawstring Waistband Cake Skirt', gender: ['Womens'], sizes: ['S', 'M', 'L'], category: 'Skirts', color: 'Black', image: '/images/skirts/skirt1.webp', description: 'A stylish layered skirt perfect for summer.', price: '$29.99', salePrice: '$20.99' }, // On Sale
+  { id: 2, name: 'Boho Elastic Waist Ruffle Maxi Skirt Dress', gender: ['Womens'], sizes: ['M', 'L', 'XL'], category: 'Skirts', color: 'White', image: '/images/skirts/skirt2.webp', description: 'Bohemian-inspired skirt dress with soft ruffles for beach days.', price: '$34.99' },
+  { id: 3, name: 'Grunge Punk Summer Y2K Skirt', gender: ['Womens'], sizes: ['S', 'M'], category: 'Skirts', color: 'Black', image: '/images/skirts/skirt3.webp', description: 'Bold and edgy Y2K skirt with a punk twist.', price: '$27.99' },
+  { id: 4, name: 'Navy Blue & Red Striped Pleated Skirt', gender: ['Womens'], sizes: ['S', 'M', 'L', 'XL'], category: 'Skirts', color: 'Black', image: '/images/skirts/skirt4.webp', description: 'A-line skirt with classic stripes for a schoolgirl vibe.', price: '$32.99' },
+
+  { id: 5, name: 'Street Life Graphic Drawstring Shorts', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Shorts', color: 'Black', image: '/images/shorts/shorts1.webp', description: 'Urban-inspired graphic shorts with comfy drawstring waist.', price: '$24.99', salePrice: '$18.74' }, // On Sale
+  { id: 6, name: 'Classic Elastic Waist Athletic Shorts', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Shorts', color: 'Gray', image: '/images/shorts/shorts2.webp', description: 'Simple and breathable shorts great for daily workouts.', price: '$22.99' },
+  { id: 7, name: 'Woven Drawstring Casual Shorts', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Shorts', color: 'Beige', image: '/images/shorts/shorts3.webp', description: 'Lightweight woven shorts perfect for streetwear.', price: '$23.99' },
+  { id: 8, name: 'Los Angeles Print Basketball Shorts', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Shorts', color: 'Black', image: '/images/shorts/shorts4.webp', description: 'Sporty and stylish with a bold LA print.', price: '$26.99' },
+
+  { id: 9, name: 'Italian Print Graphic Tee', gender: ['Mens', 'Womens'], sizes: ['S', 'M', 'L'], category: 'T-Shirts', color: 'Black', image: '/images/tee/tees1.webp', description: 'Unisex graphic tee with bold Italian print design.', price: '$19.99' },
+  { id: 10, name: 'Contrast Stitching Jersey T-Shirt', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'T-Shirts', color: 'Gray', image: '/images/tee/tees2.webp', description: 'Edgy jersey tee with contrast color stitching.', price: '$21.99', salePrice: '$16.49' }, // On Sale
+  { id: 11, name: 'Garment-Dyed Drop-Shoulder T-Shirt', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'T-Shirts', color: 'Brown', image: '/images/tee/tees3.webp', description: 'Relaxed drop-shoulder tee with a soft vintage wash.', price: '$24.99' },
+  { id: 12, name: 'Loose-Fit Casual Graphic Tee', gender: ['Womens'], sizes: ['S', 'M', 'L'], category: 'T-Shirts', color: 'Blue', image: '/images/tee/tees4.webp', description: 'Trendy and comfy graphic tee for everyday wear.', price: '$18.99' },
+
+  { id: 13, name: 'Vintage Washed Oversized Hoodie', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Hoodies', color: 'Black', image: '/images/hoodie/hoodie1.webp', description: 'Cozy oversized hoodie with a vintage washed look.', price: '$39.99' },
+  { id: 14, name: 'Washed Splicing Hoodie', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Hoodies', color: 'Gray', image: '/images/hoodie/hoodie2.webp', description: 'Street-style hoodie with color splicing and worn-in feel.', price: '$37.99' },
+  { id: 15, name: '"GAME OVER" Graphic Hoodie', gender: ['Mens', 'Womens'], sizes: ['S', 'M', 'L'], category: 'Hoodies', color: 'Brown', image: '/images/hoodie/hoodie3.webp', description: 'Retro-style hoodie with bold "GAME OVER" graphic.', price: '$35.99', salePrice: '$26.99' }, // On Sale
+  { id: 16, name: 'Abstract Angel Print Pullover Hoodie', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Hoodies', color: 'Black', image: '/images/hoodie/hoodie4.webp', description: 'Unique hoodie with an artistic angel print design.', price: '$41.99' },
+
+  { id: 17, name: 'Distressed Pocket Wide Leg Jeans', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Pants', color: 'Black', image: '/images/pants/pants1.webp', description: 'Trendy wide-leg jeans with distressed detailing.', price: '$42.99' },
+  { id: 18, name: 'Carpenter Pant', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Pants', color: 'Blue', image: '/images/pants/pants2.webp', description: 'Functional and stylish carpenter pants for everyday use.', price: '$39.99', salePrice: '$29.99' }, // On Sale
+  { id: 19, name: 'Loose Fit Sports Pants', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Pants', color: 'Gray', image: '/images/pants/pants3.webp', description: 'Breathable sports pants for relaxed streetwear.', price: '$34.99' },
+  { id: 20, name: 'Baggy Cargo Pants', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Pants', color: 'Black', image: '/images/pants/pants4.webp', description: 'Roomy cargo pants with classic street-style look.', price: '$36.99' },
+
+  { id: 21, name: 'Basic Denim Jacket', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Jackets', color: 'Black', image: '/images/jacket/jacket1.webp', description: 'Classic black denim jacket for a timeless style.', price: '$49.99' },
+  { id: 22, name: 'Zip-Up Short Jacket', gender: ['Womens'], sizes: ['S', 'M', 'L'], category: 'Jackets', color: 'Blue', image: '/images/jacket/jacket2.webp', description: 'Trendy cropped zip-up jacket with sleek design.', price: '$44.99' },
+  { id: 23, name: 'Regular Fit Bomber Jacket', gender: ['Mens'], sizes: ['S', 'M', 'L'], category: 'Jackets', color: 'Beige', image: '/images/jacket/jacket3.webp', description: 'Neutral-toned bomber jacket with everyday comfort.', price: '$46.99' },
+  { id: 24, name: 'Women\'s Coelle Shell Jacket', gender: ['Womens'], sizes: ['S', 'M', 'L'], category: 'Jackets', color: 'Purple', image: '/images/jacket/jacket4.webp', description: 'Lightweight shell jacket with bold purple tone.', price: '$48.99', salePrice: '$36.74' } // On Sale
+];

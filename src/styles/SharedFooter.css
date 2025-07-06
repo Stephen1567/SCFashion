@@ -1,0 +1,72 @@
+/* SharedFooter.css */
+
+.footer {
+    margin-top: 80px;
+    background-color: #fafafa;
+    padding: 60px 40px 30px;
+    text-align: center;
+    border-top: 1px solid #eee;
+  }
+  .footer-top h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .email-signup {
+    margin-top: 14px;
+    display: flex; /* Use flex for input and button alignment */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 10px;
+  }
+  .email-signup input {
+    padding: 12px 18px; /* Adjusted padding */
+    min-width: 200px; /* Ensure input is not too small */
+    border-radius: 25px; /* More rounded */
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1rem;
+  }
+  .email-signup button {
+    padding: 12px 25px; /* Adjusted padding */
+    background-color: #000; /* Black button */
+    color: white;
+    border: none;
+    border-radius: 25px; /* More rounded */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .email-signup button:hover {
+    background-color: #333; /* Darker on hover */
+  }
+  .footer-links {
+    margin: 30px 0 10px;
+    display: flex; /* Flex for links */
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 20px; /* Space between links */
+  }
+  .footer-links a {
+    color: #555; /* Slightly softer color */
+    text-decoration: none;
+    font-size: 15px; /* Slightly larger font */
+    transition: color 0.2s ease;
+  }
+  .footer-links a:hover {
+    color: #000; /* Darker on hover */
+  }
+  .footer-bottom p {
+    color: #888;
+    font-size: 13px;
+    margin-top: 20px; /* Space above copyright */
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 550px) {
+    .email-signup input {
+      width: 100%; /* Full width input on very small screens */
+      margin-right: 0;
+    }
+  }
+  

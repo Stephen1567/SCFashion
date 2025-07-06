@@ -1,0 +1,569 @@
+/* General container for the cart page */
+.cart-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #333;
+  }
+  
+  .cart-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2em;
+  }
+  
+  /* Empty cart message */
+  .cart-container p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 20px;
+  }
+  
+  .cart-container p a {
+    color: #f3b6b6; /* Pink */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .cart-container p a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Cart list styling */
+  .cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    position: relative; /* For positioning the remove button */
+  }
+  
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+  
+  .cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* New: Styling for item details and quantity control within cart item */
+  .cart-item .item-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Spacing between lines of text */
+  }
+
+  .cart-item h4 {
+    margin: 0; /* Reset default margin */
+    font-size: 1.1em;
+    color: #222;
+  }
+  
+  .cart-item p {
+    margin: 0; /* Reset default margin */
+    font-size: 0.9em;
+    color: #777;
+    text-align: left; /* Override previous center alignment */
+  }
+
+  /* MODIFIED: Styles for individual item prices in cart */
+  .cart-item .item-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 5px;
+    font-size: 1em; /* Adjust as needed */
+    color: #333; /* Default text color for the price line */
+  }
+
+  .cart-item .original-price-cart {
+    text-decoration: line-through;
+    color: #888; /* Grey out the original price */
+    font-size: 0.9em; /* Slightly smaller than sale price */
+  }
+
+  .cart-item .sale-price-cart {
+    color: #e74c3c; /* Red color for sale price */
+    font-weight: bold;
+    font-size: 1.1em; /* Make sale price stand out */
+  }
+
+
+  .cart-item .item-total {
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  /* New: Quantity control styling */
+  .quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .quantity-btn {
+    background-color: #f3b6b6; /* Pink */
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .quantity-btn:hover {
+    background-color: #e0a5a5; /* Darker pink on hover */
+  }
+  
+  .quantity-input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 0;
+    font-size: 1em;
+  }
+
+  /* Hide arrows for Chrome, Safari, Edge */
+  .quantity-input::-webkit-outer-spin-button,
+  .quantity-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  /* New: Remove button styling */
+  .remove-item-btn {
+    background-color: #dc3545; /* Red color for remove */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-left: auto; /* Push to the right */
+  }
+  
+  .remove-item-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
+
+  /* Cart summary and checkout button */
+  .cart-summary {
+    text-align: right;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #f3b6b6; /* Pink */
+  }
+  
+  .cart-summary h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .checkout-btn {
+    background-color: #f3b6b6; /* Pink */
+    color: #000; /* Black for contrast */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Ensure button doesn't take full width */
+    display: inline-block; /* Allow text-align to work on it */
+  }
+  
+  .checkout-btn:hover {
+    background-color: #e0a5a5; /* Darker pink on hover */
+    transform: translateY(-2px); /* Lift button slightly on hover */
+  }
+  
+  .checkout-btn:active {
+    transform: translateY(0);
+  }
+  
+  /* Step Indicator */
+  .step-indicator {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc; /* Default gray */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+  }
+  
+  .step-name {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #777; /* Default gray */
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  
+  /* Active Step: Lighter Pink */
+  .step.active .step-number {
+    background-color: #f3b6b6; /* Lighter pink for active step circle */
+  }
+  
+  .step.active .step-name {
+    color: #333; /* Keep text dark for readability on lighter background */
+    font-weight: bold;
+  }
+  
+  /* Completed Step: More Distinct Darker Pink */
+  .step.completed .step-number {
+    background-color: #d19898; /* NEW: More distinct darker pink for completed step circle */
+  }
+  
+  .step.completed .step-name {
+    color: #d19898; /* NEW: More distinct darker pink for completed step name */
+  }
+  
+  /* Line between steps */
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #eee; /* Default gray */
+    z-index: 0;
+    transform: translateX(50%);
+  }
+  
+  .step.completed:not(:last-child)::after {
+    background-color: #d19898; /* Darker pink for completed steps */
+  }
+  
+  .step.active:not(:last-child)::after {
+    background-color: #f3b6b6; /* Lighter pink for active step */
+  }
+  
+  
+  /* Checkout sections (Personal Info, Payment, Confirmation) */
+  .checkout-section {
+    padding: 30px 0;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+    text-align: center; /* Center content within section */
+  }
+  
+  .checkout-section h3 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.6em;
+  }
+  
+  /* Forms styling */
+  .checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto; /* Center the form */
+    text-align: left; /* Align labels and inputs to the left within the form */
+  }
+  
+  .checkout-form label {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  .checkout-form input[type="text"],
+  .checkout-form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+    margin-top: 5px;
+  }
+  
+  .checkout-form input[type="text"]:focus,
+  .checkout-form input[type="email"]:focus {
+    border-color: #f3b6b6; /* Pink focus border */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(243, 182, 182, 0.3); /* Pink focus shadow */
+  }
+  
+  .checkout-form .checkout-btn {
+    margin-top: 25px;
+    width: 100%; /* Make button full width of form */
+  }
+  
+  /* Confirmation Section */
+  .confirmation-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+  
+  .confirmation-section h3 {
+    color: #f3b6b6; /* Pink for success */
+    font-size: 2.2em;
+    margin-bottom: 15px;
+  }
+  
+  .confirmation-section p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .confirmation-section .checkout-btn {
+    margin-top: 30px;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .cart-container {
+      margin: 20px;
+      padding: 20px;
+    }
+  
+    .step-indicator {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+  
+    .step {
+      flex: none;
+      width: 45%; /* Allow steps to wrap for smaller screens */
+    }
+  
+    .step:not(:last-child)::after {
+      display: none; /* Hide lines on small screens if steps wrap */
+    }
+  
+    .cart-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .cart-item img {
+      margin-bottom: 10px;
+    }
+  
+    .cart-item p {
+      text-align: left;
+    }
+
+    /* Adjust remove button position on small screens */
+    .remove-item-btn {
+      position: static; /* Remove absolute positioning */
+      margin-top: 15px; /* Add some space */
+      align-self: flex-end; /* Align to the end of the item */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cart-container h2 {
+      font-size: 1.8em;
+    }
+    .cart-summary h3 {
+      font-size: 1.5em;
+    }
+    .checkout-btn {
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+    .checkout-section h3 {
+      font-size: 1.4em;
+    }
+  }
+
+/* CartPage.css additions for Discount Section */
+
+.payment-total-summary {
+  text-align: right;
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  color: #333;
+  font-weight: bold;
+}
+
+.payment-total-summary .final-price {
+  color: #000; /* Or a highlight color for the final price */
+  font-size: 1.2em;
+}
+
+.discount-section {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  text-align: left; /* Align content inside */
+}
+
+.discount-section label {
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.discount-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.discount-input-group input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.discount-input-group button.apply-discount-btn {
+  background-color: #000; /* Black button for apply */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.discount-input-group button.apply-discount-btn:hover:not(:disabled) {
+  background-color: #333;
+}
+
+.discount-input-group button.apply-discount-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.discount-message {
+  margin-top: 10px;
+  font-size: 0.95em;
+  font-weight: 500;
+}
+
+.discount-message.success {
+  color: #28a745; /* Green for success */
+}
+
+.discount-message.error {
+  color: #dc3545; /* Red for error */
+}
+/* CartPage.css additions for Order Summary in Payment Section */
+
+.order-summary-payment {
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px; /* Space below the summary */
+}
+
+.order-summary-payment h4 {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.summary-line.original-price-line .strikethrough {
+  text-decoration: line-through;
+  color: #888; /* Lighter color for struck-through price */
+}
+
+.summary-line.discount-amount-line .discount-value {
+  color: #28a745; /* Green color for discount amount */
+  font-weight: bold;
+}
+
+.summary-line.total-line {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #000;
+  border-top: 1px dashed #ccc; /* Separator for total */
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.summary-line.total-line .final-price {
+  color: #f3b6b6; /* Pink color for the final total */
+  font-size: 1.1em;
+}
+
+/* Home.css additions for the top sale banner */
+.top-sale-banner {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 8px 0; /* Thin padding */
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: sticky; /* Makes it stick to the top when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensure it's above other content */
+  }

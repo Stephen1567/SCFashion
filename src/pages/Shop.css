@@ -1,0 +1,454 @@
+/* src/styles/Shop.css */
+
+/* Keep only styles specific to the Shop page layout, filters, product grid, and local footer */
+
+/* Main Layout */
+.shop-container {
+  display: flex;
+  flex-direction: column; /* Default to column for mobile */
+  max-width: 1400px;
+  margin: 30px auto; /* Adjusted vertical margin */
+  padding: 0 20px;
+  gap: 30px; /* Adjusted gap */
+}
+
+/* Sidebar for Filters */
+.shop-sidebar {
+  flex: 0 0 auto; /* Allow sidebar to take auto width on mobile */
+  padding: 15px;
+  border-bottom: 1px solid #eee; /* Separator for mobile */
+  margin-bottom: 20px; /* Space below filters on mobile */
+}
+
+@media (min-width: 768px) {
+  .shop-container {
+    flex-direction: row; /* Side-by-side on larger screens */
+    margin: 40px auto;
+    gap: 40px;
+  }
+
+  .shop-sidebar {
+    flex: 0 0 220px; /* Fixed width sidebar on desktop */
+    border-right: 1px solid #eee; /* Separator for desktop */
+    border-bottom: none; /* Remove bottom separator */
+    padding-right: 25px; /* Add padding to the right for separator */
+    margin-bottom: 0;
+  }
+}
+
+.shop-sidebar h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.filter-section {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #f0f0f0; /* Subtle separator between filter sections */
+}
+.filter-section:last-child {
+  border-bottom: none; /* No border for the last section */
+}
+.filter-section h4 {
+  font-size: 16px;
+  margin-bottom: 12px; /* Increased space */
+  color: #555;
+}
+.filter-section label {
+  display: flex; /* Use flex for alignment */
+  align-items: center;
+  margin: 8px 0; /* More vertical space */
+  font-size: 15px; /* Slightly larger font */
+  cursor: pointer;
+  color: #444;
+  transition: color 0.2s ease;
+}
+.filter-section label:hover {
+  color: #000; /* Darker text on hover */
+}
+.filter-section input[type="checkbox"] {
+  margin-right: 10px; /* Increased space */
+  transform: scale(1.1); /* Slightly larger checkbox */
+  cursor: pointer;
+  accent-color: #000; /* Style checkbox (modern browsers) */
+}
+
+/* Main Content */
+.shop-main {
+  flex: 1;
+}
+.shop-main h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+}
+.shop-tags {
+  margin-bottom: 25px; /* Increased space below tags */
+}
+.shop-tags span {
+  display: inline-block;
+  background-color: #e0e0e0; /* Slightly darker background for tags */
+  color: #333;
+  border-radius: 20px;
+  padding: 6px 16px; /* Adjusted padding */
+  font-size: 14px;
+  margin: 0 8px 10px 0; /* Adjusted margins */
+  border: 1px solid #d0d0d0; /* Subtle border for tags */
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px; /* Increased gap */
+}
+
+.product-card {
+  text-align: center;
+  border-radius: 8px; /* Slightly more rounded */
+  padding: 15px; /* Increased padding */
+  border: 1px solid #e5e5e5; /* Lighter border */
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow for cards */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none; /* Remove underline from Link */
+  color: inherit; /* Inherit color */
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* More prominent shadow on hover */
+}
+
+.product-card .image-wrapper {
+  width: 100%;
+  height: 200px; /* Adjusted height for images */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  border-radius: 6px;
+  margin-bottom: 12px; /* Adjusted margin */
+}
+
+.product-card .image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-card h4 {
+  font-size: 16px; /* Slightly larger product title */
+  margin: 8px 0 6px; /* Adjusted margins */
+  color: #333;
+  font-weight: 600;
+}
+
+/* Styles for product prices (original and sale) */
+.product-card .product-prices {
+  display: flex; /* Use flex to align prices horizontally */
+  justify-content: center; /* Center prices */
+  align-items: baseline; /* Align text baselines */
+  gap: 8px; /* Space between original and sale price */
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.product-card .product-prices .original-price {
+  text-decoration: line-through;
+  color: #888; /* Grey out the original price */
+}
+
+.product-card .product-prices .sale-price {
+  color: #e74c3c; /* Red color for sale price */
+  font-weight: bold;
+  font-size: 1.1em; /* Make sale price slightly larger */
+}
+
+.product-card p { /* General paragraph style, overridden by .product-prices if present */
+  font-size: 14px; /* Slightly larger price text */
+  color: #666;
+  font-weight: 500;
+}
+
+
+.pagination {
+  margin-top: 50px; /* More space above pagination */
+  text-align: center;
+  display: flex; /* Use flex for centering buttons */
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+}
+.pagination button {
+  border: 1px solid #ccc; /* Subtle border for buttons */
+  background-color: #f5f5f5; /* Lighter background */
+  padding: 8px 16px; /* Adjusted padding */
+  margin: 0; /* Remove individual margins as gap handles it */
+  border-radius: 5px; /* Slightly more rounded */
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.pagination button:hover {
+  background-color: #e0e0e0;
+  border-color: #a0a0a0;
+}
+.pagination .active {
+  background-color: #000; /* Active button black */
+  color: white;
+  border-color: #000;
+  font-weight: bold;
+}
+.pagination .active:hover {
+  background-color: #333; /* Darker on hover for active */
+  border-color: #333;
+}
+
+
+/* Footer - (Consider moving this to a shared CSS file or component as well) */
+.footer {
+  margin-top: 80px;
+  background-color: #fafafa;
+  padding: 60px 40px 30px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+.footer-top h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.email-signup {
+  margin-top: 14px;
+  display: flex; /* Use flex for input and button alignment */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 10px;
+}
+.email-signup input {
+  padding: 12px 18px; /* Adjusted padding */
+  min-width: 200px; /* Ensure input is not too small */
+  border-radius: 25px; /* More rounded */
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+}
+.email-signup button {
+  padding: 12px 25px; /* Adjusted padding */
+  background-color: #000; /* Black button */
+  color: white;
+  border: none;
+  border-radius: 25px; /* More rounded */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.email-signup button:hover {
+  background-color: #333; /* Darker on hover */
+}
+.footer-links {
+  margin: 30px 0 10px;
+  display: flex; /* Flex for links */
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 20px; /* Space between links */
+}
+.footer-links a {
+  color: #555; /* Slightly softer color */
+  text-decoration: none;
+  font-size: 15px; /* Slightly larger font */
+  transition: color 0.2s ease;
+}
+.footer-links a:hover {
+  color: #000; /* Darker on hover */
+}
+.footer-bottom p {
+  color: #888;
+  font-size: 13px;
+  margin-top: 20px; /* Space above copyright */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 550px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller cards */
+    gap: 15px;
+  }
+  .shop-container {
+    padding: 0 15px;
+  }
+  .shop-sidebar {
+    padding: 10px;
+  }
+  .email-signup input {
+    width: 100%; /* Full width input on very small screens */
+    margin-right: 0;
+  }
+}
+
+/* Styles for search results info */
+.search-results-info {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.search-results-info h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.search-results-info p {
+  font-size: 1.1em;
+  color: #555;
+  margin-top: 5px;
+}
+
+.search-results-info button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.search-results-info button:hover {
+  background-color: #333;
+}
+
+/* No products found message */
+.no-products-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #777;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+/* Filter group and clear filters button for Shop.js */
+.filter-group {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #f0f0f0;
+}
+
+.filter-group:last-child {
+  border-bottom: none;
+}
+
+.filter-group h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 0.95em;
+  color: #555;
+  cursor: pointer;
+}
+
+.filter-group input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #f3b6b6; /* Use your pink accent color for checkboxes */
+}
+
+.clear-filters-btn {
+  background-color: #f3b6b6; /* Pink button */
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  width: 100%; /* Make it full width in sidebar */
+  transition: background-color 0.2s ease;
+}
+
+.clear-filters-btn:hover {
+  background-color: #e0a5a5; /* Darker pink on hover */
+}
+
+/* Adjustments for the main product grid container */
+.product-grid-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NEW: Sorting Bar Styles */
+.sort-bar {
+  display: flex;
+  justify-content: flex-end; /* Align to top right */
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px; /* Space below sorting bar */
+  padding: 10px 0;
+  background-color: #ffffff; /* Light background for the bar */
+  border-radius: 8px;
+  padding-right: 15px; /* Padding on the right */
+}
+
+.sort-bar label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.sort-bar select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 0.9em;
+  cursor: pointer;
+  outline: none;
+  /* MODIFIED: Adjusted custom arrow positioning */
+  appearance: none; /* Remove default select arrow */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%20197.9c-3.6%203.6-8.2%205.4-13.1%205.4s-9.5-1.8-13.1-5.4L146.2%2099.3%2031.6%20210.9c-3.6%203.6-8.2%205.4-13.1%205.4s-9.5-1.8-13.1-5.4c-7.2-7.2-7.2-18.8%200-26.1L133.1%206.5c7.2-7.2%2018.8-7.2%2026.1%200l114%20114c7.2%207.2%207.2%2018.8%200%2026.1z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 8px center; /* Centered vertically */
+  background-size: 5px auto;
+  padding-right: 28px; /* MODIFIED: Increased padding to make space for the arrow */
+}
+
+.sort-bar select:hover {
+  border-color: #b0b0b0;
+}
+
+.sort-bar select:focus {
+  border-color: #f3b6b6;
+  box-shadow: 0 0 0 3px rgba(243, 182, 182, 0.3);
+}
+
+/* Top Sale Banner (from Home.css, copied here for consistency if Shop.js also uses it) */
+.top-sale-banner {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  text-align: center;
+  padding: 8px 0; /* Thin padding */
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: sticky; /* Makes it stick to the top when scrolling */
+  top: 0;
+  z-index: 1000; /* Ensure it's above other content */
+}

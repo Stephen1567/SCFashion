@@ -1,0 +1,213 @@
+/* ProductPage.css */
+
+/* Keep only styles specific to the Product Page detail section */
+/* REMOVE all header and search bar related styles from here */
+
+/* Root container for the entire product page - if this is truly only for this page */
+/* If .home-root is a global container, move its definition to index.css or a global stylesheet */
+/* .home-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #333;
+} */
+
+
+/* --- Product Detail Section --- */
+.product-detail {
+  display: flex;
+  flex-direction: column; /* Default for mobile first */
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px; /* Max width for content */
+  margin: 50px auto; /* Centered with vertical margin */
+  padding: 0 30px; /* Inner padding */
+}
+
+@media (min-width: 768px) {
+  .product-detail {
+      flex-direction: row; /* Side-by-side on larger screens */
+      align-items: flex-start; /* Align top */
+  }
+}
+
+.product-image {
+  flex: 1;
+  max-width: 500px; /* Max width for image container */
+  background-color: #f9f9f9; /* Light background for image area */
+  border-radius: 10px;
+  padding: 20px;
+  display: flex; /* For centering image if it's smaller */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Subtle shadow for image card */
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  display: block; /* Remove extra space below image */
+  border-radius: 8px; /* Slightly rounded corners for the image itself */
+  object-fit: contain; /* Ensure image fits without cropping */
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Consistent spacing */
+  min-width: 300px; /* Ensure info column doesn't get too narrow */
+}
+
+.product-info h2 {
+  font-size: 32px; /* Larger product title */
+  font-weight: 700;
+  margin-bottom: 5px; /* Closer to description */
+  color: #222;
+}
+
+.product-info p {
+  font-size: 18px; /* Slightly larger description text */
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Price styling - MODIFIED */
+.item-price {
+  font-size: 28px; /* Prominent price */
+  font-weight: 700;
+  color: #000;
+  margin-top: 15px; /* Space above price */
+  margin-bottom: 20px; /* Space below price */
+  display: flex; /* Allow original and sale price to sit side-by-side */
+  align-items: baseline;
+  gap: 15px; /* Space between original and sale price */
+}
+
+/* NEW/MODIFIED: Styles for original price on product detail page */
+.original-price-detail {
+  text-decoration: line-through;
+  color: #888; /* Grey out the original price */
+  font-size: 0.7em; /* Smaller than the main price */
+  font-weight: normal;
+}
+
+/* NEW/MODIFIED: Styles for sale price on product detail page */
+.sale-price-detail {
+  color: #e74c3c; /* Red color for sale price */
+  font-size: 1em; /* Keep it the main size relative to .item-price */
+}
+
+
+.product-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.size-options {
+  display: flex;
+  flex-wrap: wrap; /* Allow sizes to wrap */
+  gap: 12px; /* Space between size buttons */
+  margin-bottom: 25px; /* Space before add to cart */
+}
+
+.size-options button {
+  padding: 10px 20px; /* More padding for touch targets */
+  border: 2px solid #ccc; /* Slightly thicker border */
+  background: #fff;
+  cursor: pointer;
+  border-radius: 8px; /* More rounded corners */
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 60px; /* Ensure minimum width for small sizes */
+  text-align: center;
+}
+
+.size-options button:hover {
+  border-color: #000;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow on hover */
+}
+
+.size-options button.selected {
+  background-color: #000; /* Solid background for selected */
+  color: white;
+  border-color: #000;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* More prominent shadow for selected */
+}
+
+.add-to-cart {
+  padding: 15px 30px; /* Larger button */
+  background-color: #000;
+  color: white;
+  border: none;
+  font-size: 18px; /* Larger text */
+  font-weight: 600;
+  border-radius: 8px; /* Rounded button */
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease, transform 0.2s ease; /* Add transform for subtle click effect */
+  width: fit-content; /* Only take necessary width */
+}
+
+.add-to-cart:hover {
+  background-color: #333;
+  transform: translateY(-2px); /* Lift button slightly on hover */
+}
+
+.add-to-cart:active {
+  transform: translateY(0); /* Press down on click */
+}
+
+.cart-message {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #28a745; /* A more distinct green for success */
+  text-align: left;
+}
+
+/* --- General Layout & Responsiveness --- */
+@media (max-width: 767px) {
+  /* REMOVE header specific media queries from here */
+  .product-detail {
+      padding: 0 20px;
+      margin: 30px auto;
+      gap: 30px;
+  }
+
+  .product-image {
+      padding: 15px;
+  }
+
+  .product-info h2 {
+      font-size: 26px;
+  }
+
+  .item-price {
+      font-size: 24px;
+  }
+
+  .add-to-cart {
+      width: 100%; /* Full width button on small screens */
+  }
+}
+
+/* Top Sale Banner (from Home.css, copied here for consistency if ProductPage.js also uses it) */
+.top-sale-banner {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  text-align: center;
+  padding: 8px 0; /* Thin padding */
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: sticky; /* Makes it stick to the top when scrolling */
+  top: 0;
+  z-index: 1000; /* Ensure it's above other content */
+}

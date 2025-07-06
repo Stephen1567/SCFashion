@@ -1,0 +1,178 @@
+/* src/styles/SharedHeader.css */
+
+/* General body/root styles that affect global typography, if not in index.css */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Header */
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem; /* Consistent padding */
+    background-color: white;
+    border-bottom: 1px solid #eee; /* Subtle bottom border */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Added subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Higher z-index to ensure it's always on top */
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between logo icon and text */
+}
+
+.logo-icon img {
+    width: 45px; /* Consistent logo size */
+    height: auto;
+    vertical-align: middle;
+}
+
+.logo-text {
+    font-weight: 700; /* Bold text */
+    font-size: 1.2rem; /* Consistent size */
+    color: #333;
+    margin: 0;
+}
+
+.main-nav {
+    display: flex;
+    gap: 1.5rem; /* More space between nav items for better readability */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333; /* Default text color */
+    font-size: 0.9rem; /* Consistent font size */
+    font-weight: 500; /* Slightly bolder for nav items */
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Underline effect for nav links */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000; /* Black underline */
+    transform: scaleX(0);
+    transition: transform 0.3s ease-out;
+}
+
+.main-nav a:hover {
+    color: #000; /* Darker on hover */
+}
+
+.main-nav a:hover::after {
+    transform: scaleX(1); /* Expand underline on hover */
+}
+
+.header-buttons {
+    display: flex;
+    gap: 1rem; /* Consistent gap between buttons */
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px; /* Add padding for larger click area */
+    border-radius: 50%; /* Make circular */
+    transition: background-color 0.2s ease;
+}
+
+.icon-btn:hover {
+    background-color: #f0f0f0; /* Light hover effect */
+}
+
+.icon-btn img {
+    width: 22px; /* Consistent icon size */
+    height: 22px;
+    vertical-align: middle;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem; /* Consistent padding */
+    background-color: #f8f8f8; /* A slightly different background for search bar */
+    border-bottom: 1px solid #eee; /* Consistent border */
+    transition: all 0.3s ease-in-out;
+    opacity: 0; /* Initially hidden */
+    max-height: 0; /* Collapse height */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.search-bar.open {
+    opacity: 1; /* Fade in */
+    max-height: 80px; /* Expand height to reveal content */
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 0.5rem 1rem; /* Adjusted padding */
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Consistent rounding */
+    font-size: 1rem; /* Consistent font size */
+    width: 300px; /* From Home.css */
+    max-width: 400px; /* Add a max-width for better control */
+    margin-right: 1rem;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #999;
+}
+
+.search-close-btn {
+    font-size: 24px; /* Larger 'X' */
+    color: #666;
+    padding: 5px 10px;
+    border-radius: 50%;
+}
+
+.search-close-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Media Queries for Header/Search Bar Responsiveness */
+@media (max-width: 767px) {
+    .home-header {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .header-buttons {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .logo-area {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-bar {
+        padding: 15px 20px;
+    }
+}
