@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SCFashion/static/css/main.d3804cca.css",
+    "main.js": "/SCFashion/static/js/main.e8a396f1.js",
+    "static/js/453.6e310a50.chunk.js": "/SCFashion/static/js/453.6e310a50.chunk.js",
+    "index.html": "/SCFashion/index.html",
+    "main.d3804cca.css.map": "/SCFashion/static/css/main.d3804cca.css.map",
+    "main.e8a396f1.js.map": "/SCFashion/static/js/main.e8a396f1.js.map",
+    "453.6e310a50.chunk.js.map": "/SCFashion/static/js/453.6e310a50.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d3804cca.css",
+    "static/js/main.e8a396f1.js"
+  ]
+}
